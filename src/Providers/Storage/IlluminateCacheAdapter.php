@@ -86,7 +86,7 @@ class IlluminateCacheAdapter implements StorageInterface
     protected function cache()
     {
         if (! method_exists($this->cache, 'tags')) {
-            return $this->cache;
+            return $this->cache->driver('file');
         }
 
         return $this->cache->tags($this->tag);
